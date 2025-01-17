@@ -19,7 +19,6 @@ export const makeExpensive = <T extends (...args: any[]) => any>(
 ): ((...args: Parameters<T>) => ReturnType<T>) => {
   return (...args: Parameters<T>): ReturnType<T> => {
     block(duration);
-
     return fn(...args);
   };
 };
